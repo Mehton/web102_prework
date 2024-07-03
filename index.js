@@ -61,7 +61,8 @@ function addGamesToPage(games) {
 
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
-addGamesToPage(GAMES_JSON);
+const allFundedGames = GAMES_JSON.filter((funded)=>{return funded.goal <= funded.pledged})
+addGamesToPage(allFundedGames);
 
 
 /*************************************************************************************
